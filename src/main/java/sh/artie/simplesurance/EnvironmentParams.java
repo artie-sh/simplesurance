@@ -14,7 +14,7 @@ public class EnvironmentParams {
         envParams.put("userName", System.getProperty("userName", "artie-sh"));
         envParams.put("repoName", System.getProperty("repoName", "toro_tests"));
         envParams.put("pullRequestNumber", System.getProperty("pullRequestNumber", "1"));
-        accessToken = System.getProperty("accessToken", "07f04fc4e95ba04d194a99c17da5f48b4f9503f2");
+        accessToken = System.getProperty("accessToken", null);
     }
 
     public String getBaseUrl() { return baseUrl; }
