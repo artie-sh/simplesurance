@@ -3,6 +3,7 @@ package sh.artie.simplesurance.test;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.junit.Assert;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import sh.artie.simplesurance.ApiClient;
 import static junit.framework.Assert.assertTrue;
@@ -23,5 +24,9 @@ public class BaseTest {
         }
         assertTrue("Getting JSON from response failed", jsonResponse != null);
         return jsonResponse;
+    }
+
+    protected void assertResponseStatus(ResponseEntity response, HttpStatus expected) {
+        assertTrue(String.format("HttpStatus mismatch: %s expected vs. %s actual", expected, response.getStatusCode()), response.getStatusCode().equals(expected));
     }
 }
